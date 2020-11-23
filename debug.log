@@ -1,0 +1,3 @@
+[0625/152252.486:ERROR:registration_protocol_win.cc(56)] CreateFile: 系统找不到指定的文件。 (0x2)
+[0625/161401.382:ERROR:registration_protocol_win.cc(56)] CreateFile: 系统找不到指定的文件。 (0x2)
+[0712/115242.639:ERROR:settings.cc(320)] Settings magic is not 1129342067

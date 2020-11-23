@@ -1,0 +1,113 @@
+﻿<!doctype html>
+<html>
+<head>
+</head>
+<body style="background-image:url(background.jpg);background-size: cover;background-repeat:no-repeat;">
+<div name="page1">
+<label>Version:</label><select id="ver">
+<option value="1.7.10">1.7.10</option>
+<option value="1.12.2">1.12.2</option>
+<option value="20w10a">20w10a</option>
+<option value="20wina">20w14infinite</option>
+</select><br />
+<label>Forge:</label><input type="checkbox" id="forge" /><br />
+<!--
+<label>64Bit:</label><input type="checkbox" id="bit" /><br />
+-->
+<label>Name:</label><input type="text" id="name" value="hello" /><br />
+
+<button onclick="runcraft()">运行Minecraft</button>
+<script>
+//".\.minecraft\versions\20w10a\20w10a-natives"
+function runcraft(){
+var cp=require('child_process')
+var fs=require('fs')
+username=document.getElementById("name").value
+sel=document.getElementById("ver").selectedIndex
+forge=document.getElementById("forge").checked
+var cmd=(fs.readFileSync("template.bat").toString().replace("edwinlau",username))
+switch(sel){
+case 0:
+if(!forge){
+var cmd=(fs.readFileSync("oldver.bat").toString().replace("edwinlau",username))
+fs.writeFileSync(".\\mcfiles\\sss.bat",cmd);
+cp.exec("cd /d .\\mcfiles&sss.bat");
+}
+else{
+for (var sssss=0;sssss<100;sssss++)
+var cmd=((fs.readFileSync("forge.bat").toString().replace("edwinlau",username)).toString().replace("pppppppppaaaaaaattttttthhhhhhh",process.cwd()+"\\mcfiles\\"))
+fs.writeFileSync(".\\mcfiles\\sss.bat",cmd);
+cp.exec("cd /d .\\mcfiles&sss.bat");
+}
+break;
+case 1:
+if(!forge){
+var cmd=(fs.readFileSync("oldver.bat").toString().replace("edwinlau",username))
+for (var sssss=0;sssss<100;sssss++)
+cmd=cmd.replace("1.7.10","1.12.2");
+fs.writeFileSync(".\\mcfiles\\sss.bat",cmd);
+cp.exec("cd /d .\\mcfiles&sss.bat");
+}
+else{
+for (var sssss=0;sssss<100;sssss++)
+cmd=cmd.replace("1.7.10-Forge10.13.4.1614-1.7.10","vvvvvvvvveeeeeeeerrrrrrrr");
+for (var sssss=0;sssss<100;sssss++)
+cmd=cmd.replace("1.7.10","veerr");
+for (var sssss=0;sssss<100;sssss++)
+cmd=cmd.replace("vvvvvvvvveeeeeeeerrrrrrrr","1.12.2-forge1.12.2-14.23.1.2555");
+for (var sssss=0;sssss<100;sssss++)
+cmd=cmd.replace("veerr","1.12.2");
+fs.writeFileSync(".\\mcfiles\\sss.bat",cmd);
+cp.exec("cd /d .\\mcfiles&sss.bat");
+}
+break;
+
+case 2:
+if(forge)
+alert("No Forge!")
+fs.writeFileSync(".\\mcfiles\\sss.bat",cmd);
+cp.exec("cd /d .\\mcfiles&sss.bat");
+break;
+case 3:
+if(forge)
+alert("No Forge!")
+for (var sssss=0;sssss<100;sssss++)
+cmd=cmd.replace("20w10a","20w14infinite");
+fs.writeFileSync(".\\mcfiles\\sss.bat",cmd);
+cp.exec("cd /d .\\mcfiles&sss.bat");
+break;
+}
+
+//cp.exec(cmd)
+}
+setTimeout(function(){
+	var xhttp;
+  xhttp=new XMLHttpRequest();
+  xhttp.onreadystatechange = function() {  
+  
+    if (this.readyState == 4 && this.status == 200) {
+	document.getElementById("versionlist").innerHTML=xhttp.responseText;
+     }
+	if(this.readyState == 4 && this.status == 404){
+
+	}
+  };
+    xhttp.onerror=function(){
+ 
+  }
+  xhttp.onabort=function(){
+
+  }
+  xhttp.open("GET","https://mcver.github.io/", true);
+  xhttp.send();
+},3000);
+</script>
+</div>
+<div class="page2" hidden>
+<h1>下载版本：</h1>
+<div style="color:white" id="versionlist">
+
+</div>
+</div>
+</body>
+</html>
